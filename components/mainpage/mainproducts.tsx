@@ -1,6 +1,6 @@
 import ProductList from "./productslist"
 import Search from "./search"
-import SideBar from "./sidebar"
+import SideBar from "../sidebar/sidebar"
 ProductList
 const MainProducts = () => {
     return (

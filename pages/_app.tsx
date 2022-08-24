@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/globals.css'
+import '../css/custom.min.css'
 import Script from 'next/script';
 import type { AppProps } from 'next/app'
 
