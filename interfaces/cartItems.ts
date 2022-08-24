@@ -1,5 +1,5 @@
 export  interface cartItem {
-    cartList: cartItems;
+    cartList: cartItems[];
 }
 export type cartItems = {
     productId: number;

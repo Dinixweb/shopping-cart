@@ -3,10 +3,10 @@ import { cartItem } from '../../interfaces/cartItems';
 
 
 const getCartItems = createSlice({
-    name: "cartData",
+    name: "cartItem",
     initialState: [],
     reducers: {
-        cartItems: (state:unknown, action:unknown) => {
+        cartItems: (state, action) => {
             
         }
     }
