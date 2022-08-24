@@ -13,9 +13,9 @@ const BreadCrumb = () => {
                 </div>
                 <div className="col-9 border-bottom">
                     <div className="row ">
-                    <div className="col-3 border-end p-4"><span><MdCompare size={35} style={{marginRight:10}}/> Compare Product</span></div>
-                    <div className="col-3 border-end p-4"><span><IoHeartCircleOutline size={35} style={{marginRight:10}}/>Wish List - Empty</span></div>
-                    <div className="col-3 border-end p-4"><span><BsMinecartLoaded size={35} style={{marginRight:10}}/>2 Products - $1000</span></div>
+                    <div className="col-4 border-end p-4"><span><MdCompare size={35} style={{marginRight:10}}/> Compare Product</span></div>
+                    <div className="col-4 border-end p-4"><span><IoHeartCircleOutline size={35} style={{marginRight:10}}/>Wish List - Empty</span></div>
+                    <div className="col-4 border-end p-4"><span><BsMinecartLoaded size={35} style={{marginRight:10}}/>2 Products - $1000</span></div>
                     </div>
                 </div>
             </div>

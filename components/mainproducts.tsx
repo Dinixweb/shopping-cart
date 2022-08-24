@@ -9,9 +9,9 @@ const MainProducts = () => {
                 <div className="col-3 border-end">
                     <SideBar/>
                 </div>
-                <div className="col-3">
+                <div className="col-9 mt-5 p-5 pt-3">
                  <div className="row"><Search/></div>
-                    <div className="row">
+                    <div className="row mt-5">
                         <ProductList/>
                     </div>
                 </div>
