@@ -61,13 +61,13 @@ a {
 }
 
 .addCartButton {
-  width: 5rem;
-  height: 5rem;
+  width: 2rem;
+  height: 4rem;
   background-color: crimson;
-  padding: 0.8rem;
-  border-radius: 2.5rem;
+  border-radius: 20rem;
+  padding: 0.7rem;
   cursor: pointer;
-  margin-left: 1.2rem;
+  margin-left: 2.8rem;
 }
 
 .addCartButton:hover {
@@ -77,6 +77,12 @@ a {
 .price {
   width: 9rem;
   border-radius: 0 !important;
+}
+
+.card:hover {
+  box-shadow: 2px 2px 12px rgba(204, 204, 204, 0.47);
+  border: none;
+  transition: 0.3s ease-in;
 }
 
 
@@ -104,4 +110,27 @@ input[type=range]::-webkit-slider-runnable-track {
   background: none;
   border-radius: 27px;
   border: 0px solid #000000;
+}
+
+.accordion {
+  /* width: 20rem; */
+  padding: 0 !important;
+  margin-left: -0.6rem;
+}
+
+.accordion-item {
+  border: none !important;
+  background-color: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background: none !important;
+  outline: none !important;
+  border: none;
+  color: #000000 !important;
+}
+
+.accordion-body li {
+  padding: 5px 10px;
+  list-style-type: none;
 }

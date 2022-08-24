@@ -30,10 +30,10 @@ return (
                     </li>
                    
                     <li className="nav-item  border-end">
-                        <a className="nav-link m-4 ps-4 pe-4">Characters <CgGhostCharacter size={23} style={{marginLeft:10}}/> </a>
+                        <a className="nav-link m-4 ps-4 pe-4" href="#">Characters <CgGhostCharacter size={23} style={{marginLeft:10}}/> </a>
                         </li>
                          <li className="nav-item  border-end">
-                        <a className="nav-link m-4 ps-4 pe-4">Brand <TbBrandApple size={23} style={{marginLeft:10}}/></a>
+                        <a className="nav-link m-4 ps-4 pe-4" href="#">Brand <TbBrandApple size={23} style={{marginLeft:10}}/></a>
                         </li>
                          <li className="nav-item  dropdown border-end ">
                         <a className="nav-link m-4 ps-4 pe-4 dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -46,7 +46,7 @@ return (
                         </ul>
                         </li>
                         <li className="nav-item  border-end">
-                        <a className="nav-link m-4 ps-4 pe-4">Cart <AiOutlineShoppingCart size={20} style={{marginLeft:10}}/></a>
+                        <a className="nav-link m-4 ps-4 pe-4" href="#">Cart <AiOutlineShoppingCart size={20} style={{marginLeft:10}}/></a>
                         </li>
                          <li className="nav-item  border-end">
                         <a className="nav-link m-4 ps-4 pe-4"><VscAccount size={25} style={{marginRight:10}}/>Micheal</a>
