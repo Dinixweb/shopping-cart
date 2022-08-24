@@ -1,0 +1,22 @@
+{
+    "products":[
+        {
+            "productId": 1,
+            "productName": "Lego Truck",
+            "productQTY": 12,
+            "vendorNo": 891892,
+            "salePrice": 198,
+            "discountPrice": 0,
+            "productCat": "Toy Cars"
+        },
+        {
+            "productId": 2,
+            "productName": "Water Resistance Wriste Watch",
+            "productQTY": 7,
+            "vendorNo": 33698,
+            "salePrice": 150,
+            "discountPrice": 145,
+            "productCat": "Apparels"
+        }
+    ]
+}

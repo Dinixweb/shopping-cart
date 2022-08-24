@@ -1,12 +1,12 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { cartItem } from '../../interfaces/cartItems';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { cart } from '../../interfaces/cartItems';
 
 
 const getCartItems = createSlice({
     name: "cartItem",
-    initialState: [],
+    initialState:[],
     reducers: {
-        cartItems: (state, action) => {
+        cartItems: (state, action:PayloadAction<cart>) => {
             
         }
     }

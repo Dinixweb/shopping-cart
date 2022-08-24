@@ -1,7 +1,7 @@
 export  interface cartItem {
-    cartList: cartItems[];
+    cartList: cart[];
 }
-export type cartItems = {
+export type cart = {
     productId: number;
     productName: string;
     productQTY: number;
@@ -9,5 +9,4 @@ export type cartItems = {
     salePrice: number;
     discountPrice: number;
     productCat: string;
-
 }
