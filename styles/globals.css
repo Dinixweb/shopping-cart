@@ -59,3 +59,22 @@ a {
   width: 18rem;
   border-radius: 0 !important;
 }
+
+.addCartButton {
+  width: 5rem;
+  height: 5rem;
+  background-color: crimson;
+  padding: 0.8rem;
+  border-radius: 2.5rem;
+  cursor: pointer;
+  margin-left: 1.2rem;
+}
+
+.addCartButton:hover {
+  background-color: rgb(176, 11, 44);
+}
+
+.price {
+  width: 9rem;
+  border-radius: 0 !important;
+}
