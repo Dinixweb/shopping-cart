@@ -1,5 +1,6 @@
-import {MdAddShoppingCart} from 'react-icons/md'
+import { MdAddShoppingCart } from 'react-icons/md'
 const SingleProduct = () => {
+
     return (
         <div className="main">
             <div className="card rounded-1">
