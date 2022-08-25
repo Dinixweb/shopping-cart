@@ -2,17 +2,16 @@ import { useContext,createContext, useState, useEffect, Children  } from "react"
 
 const myContext = createContext<unknown | null>(null);
 
-export interface Props {
+export interface child {
   Children: React.ReactNode;
 }
-const contextProvider = ({Children}:Props) => {
+export function ContextProvider  ({Children}:child) {
     
     const miCartContext = cartProvider()
     return (
         <myContext.Provider value={miCartContext}>{Children}</myContext.Provider>
     )
 }
-
 export const useAuth = () => {
     return useContext(myContext);
 }
@@ -23,4 +22,3 @@ const cartProvider = () => {
         
     }
 }
-export default contextProvider
