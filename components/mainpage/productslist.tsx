@@ -3,7 +3,17 @@ import { useAuth } from '../../hooks/useContext';
 import { productDetails, productList } from '../../interfaces/cartItems';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { AnyAction, Dispatch } from 'redux';
+import {cartItems} from '../../store/products/cartItems';
+
+
+
 const ProductList = () => {
+
+    const dispatch = useDispatch();
+
+
   const [productsList, setProductList] = useState<productDetails[] | []>([]);
   const { productsItems, setCart,cart } = useAuth();
   useEffect(() => {
@@ -15,8 +25,8 @@ const ProductList = () => {
   }, [productsItems, setProductList]);
 
     const addToCart = (product: productDetails) => {
-        setCart([...cart, product])
-        console.log("cart",cart)
+        //setCart([...cart, product])
+       dispatch(cartItems(product))
   };
   return (
     <div className="main d-flex flex-wrap gap-5">

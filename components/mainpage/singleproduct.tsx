@@ -1,7 +1,10 @@
 import { MdAddShoppingCart } from 'react-icons/md'
-import { productDetails, singleProduct } from '../../interfaces/cartItems'
-const SingleProduct = ({product, addToCart}:singleProduct) => {
-       
+import { cart, productDetails, productList, singleProduct } from '../../interfaces/cartItems'
+import { useSelector } from 'react-redux'
+const SingleProduct = ({ product, addToCart }: singleProduct) => {
+    
+    const cartArr = useSelector((state: productList) => state.cartList)
+    console.log("redux",cartArr)
     return (
         <div className="main">
           
