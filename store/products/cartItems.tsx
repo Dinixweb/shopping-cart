@@ -9,11 +9,17 @@ const getCartItems = createSlice({
         cartArr
     },
     reducers: {
-        cartItems: (state, action: PayloadAction<productDetails>) => {
-          
+        addToCartSlice: (state, action: PayloadAction<productDetails>) => {
+        //   let data =  state.cartArr.filter((cartObj:any)=>cartObj.productId===action.payload.productId)
+        //     if (data.length > 0) {
+
+        //     } else {
+                state.cartArr=[...state.cartArr, action.payload]
+            //}
+           
         }
     }
 })
 
-export const { cartItems } = getCartItems.actions;
+export const { addToCartSlice } = getCartItems.actions;
 export default getCartItems.reducer

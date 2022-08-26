@@ -3,10 +3,9 @@ import { cart, productDetails, productList, singleProduct } from '../../interfac
 import { useSelector } from 'react-redux'
 const SingleProduct = ({ product, addToCart }: singleProduct) => {
     
-    const cartArr = useSelector((state: productList) => state.cartList)
-    console.log("redux",cartArr)
+    const cartArr = useSelector((state: productList) => state.cartListArr)
     return (
-        <div className="main">
+        <div className="main singleProduct">
           
                 <div className="card rounded-1 gap">
                 <div className="card-body">Image</div>

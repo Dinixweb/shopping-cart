@@ -55,7 +55,7 @@ a {
   border-radius: 5px;
 }
 
-.card {
+.singleProduct .card {
   width: 18rem;
   border-radius: 0 !important;
 }
@@ -79,10 +79,11 @@ a {
   border-radius: 0 !important;
 }
 
-.card:hover {
+.singleProduct .card:hover {
   box-shadow: 2px 2px 12px rgba(204, 204, 204, 0.47);
   border: none;
   transition: 0.3s ease-in;
+  cursor: pointer;
 }
 
 
@@ -133,4 +134,28 @@ input[type=range]::-webkit-slider-runnable-track {
 .accordion-body li {
   padding: 5px 10px;
   list-style-type: none;
+}
+
+.cartItemsComp .card {
+  width: auto;
+}
+
+.priceInput {
+  width: 3rem !important;
+  margin: 3px !important;
+  border: none;
+  background-color: rgb(239, 239, 239);
+  outline: none;
+  border: 0.5px solid #0000003c;
+  z-index: 4;
+  margin-top: -20rem !important;
+
+}
+
+.likeDelete {
+  cursor: pointer;
+}
+
+.likeDelete:hover {
+  color: crimson;
 }

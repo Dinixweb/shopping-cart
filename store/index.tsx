@@ -12,7 +12,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, cartItems);
 export const store = configureStore({
     reducer: {
-        cartList:persistedReducer
+        cartListArr:persistedReducer
     },
     middleware:[thunk]
 })

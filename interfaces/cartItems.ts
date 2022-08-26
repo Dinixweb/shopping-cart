@@ -12,7 +12,7 @@ export interface productDetails  {
 }
 
 export interface productList{
-    cartList: productDetails[];
+    cartListArr: productDetails[];
     product: productDetails[];
     setProduct:React.Dispatch<React.SetStateAction<productDetails[]>>
 }
@@ -26,6 +26,7 @@ export type singleProduct = {
 }
 
 export interface cart{
+    cartListArr: any;
     cartList: productDetails;
     cart: productDetails[]
     setCart:React.Dispatch<React.SetStateAction<productDetails>>
