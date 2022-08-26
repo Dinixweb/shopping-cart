@@ -17,6 +17,15 @@
             "salePrice": 150,
             "discountPrice": 145,
             "productCat": "Apparels"
+        },
+        {
+            "productId": 3,
+            "productName": "Sport motorbike, multiple switch",
+            "productQTY": 7,
+            "vendorNo": 125458,
+            "salePrice": 200,
+            "discountPrice": 215,
+            "productCat": "Toy Cars"
         }
     ]
 }

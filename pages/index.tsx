@@ -1,14 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import { cart, cartItem } from "../interfaces/cartItems"
-import { GetServerSideProps } from 'next'
-import axios from 'axios'
+import styles from '../styles/Home.module.css'/*  */
 import HomePage from './home'
 
-const Home: NextPage = (data) => {
-    
+
+const Home: NextPage = () => {
+
   return (
     <div>
       <Head>
@@ -23,15 +21,8 @@ const Home: NextPage = (data) => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {      
-               const response = await axios.get(`http://localhost:3500/products`)
-                return {
-                        props:
-                        {
-                        data:response.data
-                        }
-        } 
-        
-}
+
 
 export default Home
+
+
