@@ -11,7 +11,7 @@ const CartItems = () => {
   
     useEffect(() => {
         const uniqueId = new Set();
-    const unique = cartArr.filter((q: any) => {
+    let unique = cartArr.filter((q: any) => {
       const isDuplicate = uniqueId.has(q.productId);
         uniqueId.add(q.productId); 
         if (!isDuplicate) {
@@ -21,15 +21,7 @@ const CartItems = () => {
         }
         
     });
-        let arr = cartArr.filter((value: any) => {
-           return unique.map((arr:any) => {
-                if (arr.productId === value.productId) {
-                 return value
-            }
-            })
-           
-      })
-        console.log(arr)
+   
     setCartItems(unique);
       
     }, [cartArr, setCartItems]);
