@@ -22,9 +22,20 @@ const getCartItems = createSlice({
             })
             }
             
+        },
+        removeCartItem: (state, action: PayloadAction<productDetails>) => {
+            state.cartArr.map((check: any) => {
+                if (check.defaultQty <= 1) {
+                    //do nothing
+                } else {
+                    if (check.productId === action.payload.productId) {
+                    check.defaultQty--
+                }
+                }
+            })
         }
     }
 })
 
-export const { addToCartSlice } = getCartItems.actions;
+export const { addToCartSlice,removeCartItem } = getCartItems.actions;
 export default getCartItems.reducer

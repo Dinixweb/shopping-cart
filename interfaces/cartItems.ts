@@ -35,5 +35,6 @@ export interface cart{
 
 export type singleCart = {
     cart: productDetails;
+  
     
 }

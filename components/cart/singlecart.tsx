@@ -1,8 +1,18 @@
 import { IoIosAdd } from 'react-icons/io'
 import { HiMinusSm } from 'react-icons/hi'
 import { AiFillHeart,AiFillDelete } from 'react-icons/ai'
-import { singleCart } from '../../interfaces/cartItems'
-const SingleCart = (cart:singleCart) => {
+import { productDetails, singleCart } from '../../interfaces/cartItems'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCartSlice, removeCartItem } from '../../store/products/cartItems'
+const SingleCart = (cart: singleCart) => {
+    const dispatch = useDispatch()
+    const handleIncrease = () => {
+         dispatch(addToCartSlice(cart.cart))
+    }
+    const handleDecrease = () => {
+         console.log(cart.cart)
+         dispatch(removeCartItem(cart.cart))
+    }
     return (
         <div className="main">
             <div className="row mb-4 m-2 ">
@@ -24,9 +34,9 @@ const SingleCart = (cart:singleCart) => {
                                 <option value="">Blue</option>
                                  <option value="">Green</option>
                             </select>
-                            <button className="p-1 btn btn-primary text-light  cartButton"><HiMinusSm size={21}/></button>
+                            <button className="p-1 btn btn-primary text-light  cartButton" onClick={handleDecrease}><HiMinusSm size={21}/></button>
                             <input type="text" value={cart.cart.defaultQty} className="form-control-sm priceInput" />
-                            <button className="p-1 btn btn-primary text-light cartButton"><IoIosAdd size={21}/></button>
+                            <button className="p-1 btn btn-primary text-light cartButton" onClick={handleIncrease}><IoIosAdd size={21}/></button>
                         </div>
                     </div>
                     <div className="col-3 d-flex flex-column justify-content-between">
