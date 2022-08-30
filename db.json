@@ -7,7 +7,9 @@
             "vendorNo": 891892,
             "salePrice": 198,
             "discountPrice": 0,
-            "productCat": "Toy Cars"
+            "productCat": "Toy Cars",
+            "defaultQty":1
+            
         },
         {
             "productId": 2,
@@ -16,7 +18,9 @@
             "vendorNo": 33698,
             "salePrice": 150,
             "discountPrice": 145,
-            "productCat": "Apparels"
+            "productCat": "Apparels",
+             "defaultQty":1
+            
         },
         {
             "productId": 3,
@@ -25,7 +29,8 @@
             "vendorNo": 125458,
             "salePrice": 200,
             "discountPrice": 215,
-            "productCat": "Toy Cars"
+            "productCat": "Toy Cars",
+             "defaultQty":1
         }
     ]
 }

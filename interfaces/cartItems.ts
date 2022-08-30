@@ -2,6 +2,7 @@ import React from "react";
 
 
 export interface productDetails  {
+    defaultQty: number;
     productId: number;
     productName: string;
     productQTY: number;
@@ -30,4 +31,9 @@ export interface cart{
     cartList: productDetails;
     cart: productDetails[]
     setCart:React.Dispatch<React.SetStateAction<productDetails>>
+}
+
+export type singleCart = {
+    cart: productDetails;
+    
 }

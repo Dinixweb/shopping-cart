@@ -8,13 +8,16 @@ import { productList, cart, productDetails } from '../../interfaces/cartItems';
 import { useEffect, useState } from 'react';
 const BreadCrumb = () => {
   const [qty, setQty] = useState<number[] | []>([]);
+  const [cartQTY, setCartQTY] = useState<number | 0>(0)
   const cartArr = useSelector((state: cart) => state.cartListArr.cartArr);
   const { cart } = useAuth();
+
   useEffect(() => {
     const uniqueId = new Set();
     const unique = cartArr.filter((q: any) => {
       const isDuplicate = uniqueId.has(q.productId);
       uniqueId.add(q.productId);
+      
       if (!isDuplicate) {
         return true;
       }

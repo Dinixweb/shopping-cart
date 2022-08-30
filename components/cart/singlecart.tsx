@@ -1,7 +1,8 @@
 import { IoIosAdd } from 'react-icons/io'
 import { HiMinusSm } from 'react-icons/hi'
 import { AiFillHeart,AiFillDelete } from 'react-icons/ai'
-const SingleCart = () => {
+import { singleCart } from '../../interfaces/cartItems'
+const SingleCart = (cart:singleCart) => {
     return (
         <div className="main">
             <div className="row mb-4 m-2 ">
@@ -9,9 +10,9 @@ const SingleCart = () => {
                         Image
                     </div>
                     <div className="col-6">
-                        Content
+                        {cart.cart.productName}
                         <div className="span">
-                            <small>$ 12.99</small>|
+                            <small>$ {cart.cart.salePrice}</small>|
                              <small className="text-success">In Stock</small>
                         </div>
                         <div className="span">
@@ -24,12 +25,12 @@ const SingleCart = () => {
                                  <option value="">Green</option>
                             </select>
                             <button className="p-1 btn btn-primary text-light  cartButton"><HiMinusSm size={21}/></button>
-                            <input type="text" className="form-control-sm priceInput" />
+                            <input type="text" value={cart.cart.defaultQty} className="form-control-sm priceInput" />
                             <button className="p-1 btn btn-primary text-light cartButton"><IoIosAdd size={21}/></button>
                         </div>
                     </div>
                     <div className="col-3 d-flex flex-column justify-content-between">
-                        <div className="row d-flex justify-content-end pe-3">$ 12.99</div>
+                        <div className="row d-flex justify-content-end pe-3">$ {cart.cart.salePrice}</div>
                         <div className="row"><span><span className='p-2 likeDelete'><AiFillHeart/> Save</span>|<span className='p-2 likeDelete'><AiFillDelete/> Delete</span></span></div>
                      </div>
                 </div>

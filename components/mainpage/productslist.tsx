@@ -1,6 +1,6 @@
 import SingleProduct from './singleproduct';
 import { useAuth } from '../../hooks/useContext';
-import { productDetails, productList } from '../../interfaces/cartItems';
+import { cart, productDetails, productList } from '../../interfaces/cartItems';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
@@ -16,6 +16,8 @@ const ProductList = () => {
 
   const [productsList, setProductList] = useState<productDetails[] | []>([]);
   const { productsItems, setCart,cart } = useAuth();
+
+  let cartList = useSelector((state:cart)=>state.cartListArr.cartArr)
   useEffect(() => {
     const GetPorducts = async () => {
       const response = await axios.get(` http://localhost:3500/products`);
@@ -24,7 +26,7 @@ const ProductList = () => {
     GetPorducts();
   }, [productsItems, setProductList]);
 
-    const addToCart = (product: productDetails) => {
+  const addToCart = (product: productDetails) => {
        dispatch(addToCartSlice(product))
   };
   return (

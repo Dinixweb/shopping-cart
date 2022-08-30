@@ -10,13 +10,7 @@ const getCartItems = createSlice({
     },
     reducers: {
         addToCartSlice: (state, action: PayloadAction<productDetails>) => {
-        //   let data =  state.cartArr.filter((cartObj:any)=>cartObj.productId===action.payload.productId)
-        //     if (data.length > 0) {
-
-        //     } else {
-                state.cartArr=[...state.cartArr, action.payload]
-            //}
-           
+            state.cartArr=[...state.cartArr, action.payload]
         }
     }
 })
