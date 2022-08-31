@@ -3,6 +3,7 @@ import { HiMinusSm } from 'react-icons/hi'
 import { AiFillHeart,AiFillDelete } from 'react-icons/ai'
 import { productDetails, singleCart } from '../../interfaces/cartItems'
 import { useDispatch, useSelector } from 'react-redux'
+import Image from 'next/image'
 import { addToCartSlice, removeCartItem,decreaseCartItems } from '../../store/products/cartItems'
 const SingleCart = (cart: singleCart) => {
     const dispatch = useDispatch()
@@ -19,7 +20,7 @@ const SingleCart = (cart: singleCart) => {
         <div className="main">
             <div className="row mb-4 m-2 ">
                     <div className="col-3">
-                        Image
+                        <span className=''><Image src={cart.cart.image} width={110} height={120} alt="productImage" className='rounded'  layout="fixed"/></span>
                     </div>
                     <div className="col-6">
                         {cart.cart.productName}

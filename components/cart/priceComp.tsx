@@ -56,7 +56,6 @@ const PriceItems = () => {
       .map((val: any) => val.discountPrice)
       .reduce((a: number, b: number) => a + b, 0);
     let approveDiscount = myDiscount - subTotal;
-     console.log(myDiscount)
     setDiscount(approveDiscount);
 
     //total
@@ -65,7 +64,8 @@ const PriceItems = () => {
     setTotal(total);
   }, [cartArr]);
   return (
-    <div className="card p-3">
+    <span className="priceCard">
+      <div className="card p-3">
       {total === 0 ? (
         <div className="row">
           <div className="d-flex justify-content-center align-items-center">
@@ -73,16 +73,18 @@ const PriceItems = () => {
           </div>
         </div>
       ) : (
-        <div className="row">
+        <span className="row">
           <div className="span">Delivery</div>
-          <div className="row d-flex align-items-center">
-            <span className="ms-2 mt-1 rounded bg-light p-2 w-50 border">
-              <span className="span p-1 bg-white border rounded me-1 shadow-sm">
+              <div className="main d-flex align-items-center">
+                <div className="row ">
+                  <span className="ms-2 mt-1 rounded bg-light p-2 w-50 border">
+                    {delivery===0? (<span className="span p-1 bg-white border rounded me-1 shadow-sm">
                 Free
-              </span>
-              <span className="bg-white p-1  border rounded me-1 shadow-sm">
+              </span>):(<span className="bg-white p-1  border rounded me-1 shadow-sm">
                 Paid
-              </span>
+              </span>)}
+              
+              
               <span className="span">$ {delivery}</span>
             </span>
             <div className="row">
@@ -126,18 +128,22 @@ const PriceItems = () => {
               <span>Total</span>
               <span>${total}</span>
             </div>
-            <div className="row">
-              <button className="btn btn-danger mb-2">
+    
+              
+                <button className="btn btn-danger mb-2">
                 Proceed to checkout
               </button>
-              <button className="btn btn-outline-danger">
+                  
+                  <button className="btn btn-outline-danger">
                 Continue Shopping
               </button>
-            </div>
+           
           </div>
-        </div>
+          </div>
+        </span>
       )}
     </div>
+    </span>
   );
 };
 export default PriceItems;

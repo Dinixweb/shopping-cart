@@ -1,17 +1,21 @@
 import { MdAddShoppingCart } from 'react-icons/md'
 import { cart, productDetails, productList, singleProduct } from '../../interfaces/cartItems'
 import { useSelector } from 'react-redux'
+import Image from 'next/image'
 const SingleProduct = ({ product, addToCart }: singleProduct) => {
-    
     const cartArr = useSelector((state: productList) => state.cartListArr)
     return (
         <div className="main singleProduct">
           
                 <div className="card rounded-1 gap">
-                <div className="card-body">Image</div>
+                <div className="card-head">
+                    <span>
+                         <Image src={product.image}  width={0} height={0} layout="responsive" className='image' alt="productImage" />
+                   </span>
+                </div>
                 <div className="card-footer bg-white text-secondary">
                     <small>Vendor Code: {product.vendorNo}</small>
-                    <h6 className='text-danger mt-2'>{product.productName}</h6>
+                    <h6 className='text-secondary mt-2'>{product.productName}</h6>
                     <small>collection <strong>{product.productCat}</strong></small>
                     <h6 className='mt-3'><small >Price</small></h6>
                     <div className="row">

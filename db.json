@@ -9,7 +9,8 @@
             "discountPrice": 0,
             "productCat": "Toys",
             "defaultQty":1,
-            "shippingCost":17
+            "shippingCost":0,
+            "image":"https://images.unsplash.com/photo-1517012068311-53ed5975e234?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1056&q=80"
             
         },
         {
@@ -21,7 +22,8 @@
             "discountPrice": 175,
             "productCat": "Apparels",
              "defaultQty":1,
-             "shippingCost":12.99
+             "shippingCost":12.99,
+             "image":"https://images.unsplash.com/photo-1524805444758-089113d48a6d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
             
         },
         {
@@ -33,7 +35,8 @@
             "discountPrice": 215,
             "productCat": "Toys",
             "defaultQty":1,
-            "shippingCost":8.10
+            "shippingCost":0,
+            "image":"https://images.unsplash.com/photo-1530784125230-543e3e83f60b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80"
         },
         {
             "productId": 4,
@@ -44,7 +47,8 @@
             "discountPrice": 350,
             "productCat": "Toys",
             "defaultQty":1,
-            "shippingCost":21.99
+            "shippingCost":21.99,
+            "image":"https://images.unsplash.com/photo-1650132056392-e193edc837b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80"
         },
         {
             "productId": 5,
@@ -55,7 +59,8 @@
             "discountPrice": 165,
             "productCat": "Toys",
             "defaultQty":1,
-            "shippingCost":21.99
+            "shippingCost":21.99,
+            "image":"https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1648&q=80"
         },
         {
             "productId": 6,
@@ -66,7 +71,8 @@
             "discountPrice": 0,
             "productCat": "Toys",
             "defaultQty":1,
-            "shippingCost":58.99
+            "shippingCost":58.99,
+            "image":"https://images.unsplash.com/photo-1579271723124-a758848c2753?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80"
         },
         {
             "productId": 7,
@@ -77,7 +83,8 @@
             "discountPrice": 420,
             "productCat": "Toys",
             "defaultQty":1,
-            "shippingCost":90.99
+            "shippingCost":90.99,
+            "image":"https://images.unsplash.com/photo-1588899428678-f9ea565d91fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
         },
           {
             "productId": 8,
@@ -88,7 +95,8 @@
             "discountPrice": 380,
             "productCat": "Toys",
             "defaultQty":1,
-            "shippingCost":110
+            "shippingCost":110,
+            "image":"https://images.unsplash.com/photo-1558563763-9157dc01afbc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
         }
     ]
 }

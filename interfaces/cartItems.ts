@@ -1,7 +1,9 @@
 import React from "react";
 
 
+
 export interface productDetails  {
+    image: string | any;
     defaultQty: number;
     productId: number;
     productName: string;
@@ -12,6 +14,10 @@ export interface productDetails  {
     productCat: string;
     orderTime: any;
     shippingCost:number
+}
+
+export type StaticImport = {
+   
 }
 
 export interface productList{

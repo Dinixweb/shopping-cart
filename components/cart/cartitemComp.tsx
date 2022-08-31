@@ -28,7 +28,9 @@ const CartItems = () => {
    
     return (
         <div className="cartItemsComp">
-            <div className="card p-4 border-0 shadow-lg ">
+            {cartItems.length===0?( <div className="emptyCart p-5">
+                <span>Keep shopping</span>
+            </div>):(  <div className="card p-4 border-0 shadow-lg ">
                 {cartItems.map((cart: productDetails) => {
                     return (
                         <div className="item border-bottom mb-3" key={cart.productId}>
@@ -36,7 +38,9 @@ const CartItems = () => {
                         </div>
                    )
                })}
-            </div>
+            </div>)}
+           
+          
         </div>
     )
 }

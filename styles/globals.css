@@ -138,6 +138,7 @@ input[type=range]::-webkit-slider-runnable-track {
 
 .cartItemsComp .card {
   width: auto;
+  max-width: 50rem !important;
 }
 
 .priceInput {
@@ -187,4 +188,12 @@ input[type=range]::-webkit-slider-runnable-track {
 
 .discount {
   border-bottom: 1px dashed #ccc;
+}
+
+.image {
+  background-size: cover !important;
+}
+
+.priceCard .card {
+  max-width: 25rem !important;
 }
