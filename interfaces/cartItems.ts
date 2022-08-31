@@ -10,6 +10,7 @@ export interface productDetails  {
     salePrice: number;
     discountPrice: number;
     productCat: string;
+    orderTime: any;
 }
 
 export interface productList{

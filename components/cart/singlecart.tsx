@@ -3,15 +3,14 @@ import { HiMinusSm } from 'react-icons/hi'
 import { AiFillHeart,AiFillDelete } from 'react-icons/ai'
 import { productDetails, singleCart } from '../../interfaces/cartItems'
 import { useDispatch, useSelector } from 'react-redux'
-import { addToCartSlice, removeCartItem } from '../../store/products/cartItems'
+import { addToCartSlice, removeCartItem,decreaseCartItems } from '../../store/products/cartItems'
 const SingleCart = (cart: singleCart) => {
     const dispatch = useDispatch()
     const handleIncrease = () => {
          dispatch(addToCartSlice(cart.cart))
     }
     const handleDecrease = () => {
-         console.log(cart.cart)
-         dispatch(removeCartItem(cart.cart))
+         dispatch(decreaseCartItems(cart.cart))
     }
     return (
         <div className="main">

@@ -30,7 +30,7 @@
             "salePrice": 200,
             "discountPrice": 215,
             "productCat": "Toy Cars",
-             "defaultQty":1
+            "defaultQty":1
         }
     ]
 }

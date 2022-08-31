@@ -11,31 +11,46 @@ const getCartItems = createSlice({
     reducers: {
         addToCartSlice: (state, action: PayloadAction<productDetails>) => {
             if (state.cartArr.length <= 0) {
+                 let orderDate = new Date().getTime
+                 action.payload.orderTime = orderDate
                 state.cartArr=[...state.cartArr, action.payload]
             } else {
                 state.cartArr.map((check: any) => {
                 if (check.productId === action.payload.productId) {
-                    check.defaultQty++
-                } else {
-                    state.cartArr=[...state.cartArr, action.payload]
-                }
-            })
+                   return check.defaultQty++
+                    } 
+                    
+                })
+                let orderDate = new Date().getTime
+                 action.payload.orderTime = orderDate
+                 state.cartArr=[...state.cartArr, action.payload]
             }
             
         },
-        removeCartItem: (state, action: PayloadAction<productDetails>) => {
+        decreaseCartItems: (state, action: PayloadAction<productDetails>) => {
             state.cartArr.map((check: any) => {
                 if (check.defaultQty <= 1) {
                     //do nothing
                 } else {
                     if (check.productId === action.payload.productId) {
-                    check.defaultQty--
-                }
+                        check.defaultQty--   
+                        if (check.orderTime === action.payload.orderTime) {
+                            state.cartArr =  [...state.cartArr.filter((items)=>items.orderTime !==action.payload.orderTime)]
+                        }
+                    }
+                    
                 }
             })
+            
+             
+           
+        },
+        removeCartItem: (state, action: PayloadAction<productDetails>) => {
+            state.cartArr =  [...state.cartArr.filter((items)=>items.productId !==action.payload.productId)]
         }
+
     }
 })
 
-export const { addToCartSlice,removeCartItem } = getCartItems.actions;
+export const { addToCartSlice,removeCartItem,decreaseCartItems } = getCartItems.actions;
 export default getCartItems.reducer
