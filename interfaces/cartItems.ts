@@ -36,6 +36,9 @@ export interface cart{
 
 export type singleCart = {
     cart: productDetails;
-  
-    
+}
+export type cartTotal = {
+    productId: number;
+    itemQty?: number
+    itemsPrice:number
 }

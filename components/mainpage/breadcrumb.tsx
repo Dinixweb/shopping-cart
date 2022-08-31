@@ -24,6 +24,12 @@ const BreadCrumb = () => {
       return false;
     });
     setQty(unique);
+
+    let price = cartArr.map((total: {
+         salePrice: number 
+    }) => total.salePrice)
+    console.log(price)
+
   }, [cartArr, setQty]);
   return (
     <div className="main">
@@ -56,9 +62,8 @@ const BreadCrumb = () => {
                 <BsMinecartLoaded size={35} style={{ marginRight: 10 }} />
                 {qty.length} Products - ${' '}
                 {cartArr.length > 0
-                  ? cartArr
-                      .map((total: { salePrice: number }) => total.salePrice)
-                      .reduce((a: number, b: number) => a + b)
+                  ? 1
+                      
                   : 0}
               </span>
             </div>
