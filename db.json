@@ -8,7 +8,8 @@
             "salePrice": 198,
             "discountPrice": 0,
             "productCat": "Toy Cars",
-            "defaultQty":1
+            "defaultQty":1,
+            "shippingCost":17
             
         },
         {
@@ -17,9 +18,10 @@
             "productQTY": 7,
             "vendorNo": 33698,
             "salePrice": 150,
-            "discountPrice": 145,
+            "discountPrice": 175,
             "productCat": "Apparels",
-             "defaultQty":1
+             "defaultQty":1,
+             "shippingCost":12.99
             
         },
         {
@@ -30,7 +32,8 @@
             "salePrice": 200,
             "discountPrice": 215,
             "productCat": "Toy Cars",
-            "defaultQty":1
+            "defaultQty":1,
+            "shippingCost":8.10
         }
     ]
 }

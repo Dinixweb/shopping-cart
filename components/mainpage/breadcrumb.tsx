@@ -36,7 +36,6 @@ const BreadCrumb = () => {
       }
       return priceData
     } )
-    console.log(price)
     setSubPrice(price)
   }, [cartArr, setQty]);
   return (

@@ -167,3 +167,24 @@ input[type=range]::-webkit-slider-runnable-track {
 .bList:hover {
   color: crimson;
 }
+
+.cartInput {
+  max-width: 20rem !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+.coupon {
+  left: 12rem;
+  background-color: crimson;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.coupon:hover {
+  background-color: rgb(250, 35, 78);
+}
+
+.discount {
+  border-bottom: 1px dashed #ccc;
+}
