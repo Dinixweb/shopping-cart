@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { cart, productDetails,cartTotal } from '../../interfaces/cartItems';
+import { cart, productDetails, cartTotal } from '../../interfaces/cartItems';
 
 type cartDetails = productDetails[];
 type cartCost = cartTotal[];
@@ -8,38 +8,26 @@ let cartArr: cartDetails = [];
 const getCartItems = createSlice({
   name: 'cartItem',
   initialState: {
-      cartArr,
-      cartTotal,
+    cartArr,
+    cartTotal
   },
   reducers: {
     addToCartSlice: (state, action: PayloadAction<productDetails>) => {
       if (state.cartArr.length <= 0) {
-          state.cartArr = [...state.cartArr, action.payload];
-          let priceData = {
-             productId: action.payload.productId,
-              itemsPrice: action.payload.salePrice,
-             itemQty:action.payload.defaultQty
-          }
-          state.cartTotal=[...state.cartTotal, priceData]
+        state.cartArr = [...state.cartArr, action.payload];
       } else {
-       let [check]:(number|boolean)[] =  state.cartArr.map((check: any) => {
-            if (check.productId === action.payload.productId) {
-                return check.defaultQty++;
-          } else {
-              return false
-            
-                //state.cartArr = [...state.cartArr, action.payload];
-        //        let priceData = {
-        //      productId: action.payload.productId,
-        //       itemsPrice: action.payload.salePrice,
-        //      itemQty:action.payload.defaultQty
-        //   }
-        //   state.cartTotal=[...state.cartTotal, priceData]
-          }
-       });
-          console.log("check",check)
-          if (!check) {
-            state.cartArr = [...state.cartArr, action.payload];
+        const isItemExist = state.cartArr.find((item) =>
+          item.productId === action.payload.productId ? true : false
+        );
+
+        if (isItemExist) {
+          state.cartArr.forEach((check: any) => {
+            check.productId === action.payload.productId
+              ? check.defaultQty++
+              : "";
+          });
+        } else {
+            (state.cartArr = [...state.cartArr, action.payload])
         }
       }
     },

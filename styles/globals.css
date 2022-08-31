@@ -159,3 +159,11 @@ input[type=range]::-webkit-slider-runnable-track {
 .likeDelete:hover {
   color: crimson;
 }
+
+.bList {
+  cursor: pointer;
+}
+
+.bList:hover {
+  color: crimson;
+}

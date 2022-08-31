@@ -6,12 +6,14 @@ import { useAuth } from '../../hooks/useContext';
 import { useSelector } from 'react-redux';
 import { productList, cart, productDetails } from '../../interfaces/cartItems';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 const BreadCrumb = () => {
   const [qty, setQty] = useState<number[] | []>([]);
-  const [cartQTY, setCartQTY] = useState<number | 0>(0)
+  const [subPrice, setSubPrice] = useState<number[] | []>([])
   const cartArr = useSelector((state: cart) => state.cartListArr.cartArr);
   const { cart } = useAuth();
-
+  const cartPage = '/cart'
+  const home= '/'
   useEffect(() => {
     const uniqueId = new Set();
     const unique = cartArr.filter((q: any) => {
@@ -25,20 +27,29 @@ const BreadCrumb = () => {
     });
     setQty(unique);
 
-    let price = cartArr.map((total: {
-         salePrice: number 
-    }) => total.salePrice)
+    let price = cartArr.map((total: productDetails) => {
+      let subPrice = total.salePrice * total.defaultQty;
+      let qty = total.defaultQty;
+      const priceData = {
+        subPrice,
+        qty
+      }
+      return priceData
+    } )
     console.log(price)
-
+    setSubPrice(price)
   }, [cartArr, setQty]);
   return (
     <div className="main">
       <div className="row">
         <div className="col-3 border-bottom p-3 border-end">
           <span className="icon ms-5">
-            <BiHomeAlt size={23} style={{ marginTop: -7 }} />{' '}
+           
             <span className="fs-4">
-              Home <MdKeyboardArrowRight />
+              <Link href={home}>
+              <span className='bList'> <BiHomeAlt size={25} style={{ marginTop: -7 }} />{' '} Home</span>
+              </Link>
+              <MdKeyboardArrowRight />
               <small className="fs-6">Catalog</small>{' '}
             </span>
           </span>
@@ -46,26 +57,28 @@ const BreadCrumb = () => {
         <div className="col-9 border-bottom">
           <div className="row ">
             <div className="col-4 border-end p-4">
-              <span>
+              <span className='bList'>
                 <MdCompare size={35} style={{ marginRight: 10 }} /> Compare
                 Product
               </span>
             </div>
             <div className="col-4 border-end p-4">
-              <span>
+              <span className='bList'>
                 <IoHeartCircleOutline size={35} style={{ marginRight: 10 }} />
                 Wish List - Empty
               </span>
             </div>
-            <div className="col-4 border-end p-4">
-              <span>
+            <div className="col-4 border-end p-4 ">
+              <Link href={cartPage} >
+                 <span className='bList'>
                 <BsMinecartLoaded size={35} style={{ marginRight: 10 }} />
                 {qty.length} Products - ${' '}
                 {cartArr.length > 0
-                  ? 1
+                  ? subPrice.map((price:any)=>price.subPrice).reduce((a,b)=>a+b,0)
                       
                   : 0}
               </span>
+              </Link>
             </div>
           </div>
         </div>

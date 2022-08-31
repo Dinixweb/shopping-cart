@@ -12,6 +12,9 @@ const SingleCart = (cart: singleCart) => {
     const handleDecrease = () => {
          dispatch(decreaseCartItems(cart.cart))
     }
+    const deleteItem = () => {
+        dispatch(removeCartItem(cart.cart))
+    }
     return (
         <div className="main">
             <div className="row mb-4 m-2 ">
@@ -40,7 +43,7 @@ const SingleCart = (cart: singleCart) => {
                     </div>
                     <div className="col-3 d-flex flex-column justify-content-between">
                         <div className="row d-flex justify-content-end pe-3">$ {cart.cart.salePrice}</div>
-                        <div className="row"><span><span className='p-2 likeDelete'><AiFillHeart/> Save</span>|<span className='p-2 likeDelete'><AiFillDelete/> Delete</span></span></div>
+                        <div className="row"><span><span className='p-2 likeDelete'><AiFillHeart/> Save</span>|<span className='p-2 likeDelete' onClick={deleteItem}><AiFillDelete/> Delete</span></span></div>
                      </div>
                 </div>
         </div>
