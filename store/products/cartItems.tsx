@@ -11,7 +11,7 @@ const getCartItems = createSlice({
     reducers: {
         addToCartSlice: (state, action: PayloadAction<productDetails>) => {
             if (state.cartArr.length <= 0) {
-                 let orderDate = new Date().getTime
+                 let orderDate = new Date().getTime()
                  action.payload.orderTime = orderDate
                 state.cartArr=[...state.cartArr, action.payload]
             } else {
@@ -21,7 +21,7 @@ const getCartItems = createSlice({
                     } 
                     
                 })
-                let orderDate = new Date().getTime
+                let orderDate = new Date().getTime()
                  action.payload.orderTime = orderDate
                  state.cartArr=[...state.cartArr, action.payload]
             }
