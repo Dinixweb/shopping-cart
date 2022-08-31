@@ -7,7 +7,7 @@
             "vendorNo": 891892,
             "salePrice": 198,
             "discountPrice": 0,
-            "productCat": "Toy Cars",
+            "productCat": "Toys",
             "defaultQty":1,
             "shippingCost":17
             
@@ -31,9 +31,64 @@
             "vendorNo": 125458,
             "salePrice": 200,
             "discountPrice": 215,
-            "productCat": "Toy Cars",
+            "productCat": "Toys",
             "defaultQty":1,
             "shippingCost":8.10
+        },
+        {
+            "productId": 4,
+            "productName": "Car Inertial Transformer Robots Toy - Blue",
+            "productQTY": 12,
+            "vendorNo": 528798,
+            "salePrice": 300,
+            "discountPrice": 350,
+            "productCat": "Toys",
+            "defaultQty":1,
+            "shippingCost":21.99
+        },
+        {
+            "productId": 5,
+            "productName": "Bicycles Size 20 For Kids",
+            "productQTY": 20,
+            "vendorNo": 20369,
+            "salePrice": 150,
+            "discountPrice": 165,
+            "productCat": "Toys",
+            "defaultQty":1,
+            "shippingCost":21.99
+        },
+        {
+            "productId": 6,
+            "productName": "Power Wheels Hot Jeep Wrangler 12v Ride On Vehicle",
+            "productQTY": 10,
+            "vendorNo": 879554,
+            "salePrice": 400,
+            "discountPrice": 0,
+            "productCat": "Toys",
+            "defaultQty":1,
+            "shippingCost":58.99
+        },
+        {
+            "productId": 7,
+            "productName": "Jeep Ride On For Kids 009",
+            "productQTY": 15,
+            "vendorNo": 457888,
+            "salePrice": 380,
+            "discountPrice": 420,
+            "productCat": "Toys",
+            "defaultQty":1,
+            "shippingCost":90.99
+        },
+          {
+            "productId": 8,
+            "productName": "For Kids - Ride On- Battery Powered Car Jeep",
+            "productQTY":25,
+            "vendorNo": 222548,
+            "salePrice": 310,
+            "discountPrice": 380,
+            "productCat": "Toys",
+            "defaultQty":1,
+            "shippingCost":110
         }
     ]
 }
