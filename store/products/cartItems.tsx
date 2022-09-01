@@ -1,15 +1,18 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { cart, productDetails, cartTotal } from '../../interfaces/cartItems';
 
+//cartList
 type cartDetails = productDetails[];
+let cartArr: cartDetails = [];
+//cart total
 type cartCost = cartTotal[];
 let cartTotal: cartCost = [];
-let cartArr: cartDetails = [];
+
+
 const getCartItems = createSlice({
   name: 'cartItem',
   initialState: {
     cartArr,
-    cartTotal
   },
   reducers: {
     addToCartSlice: (state, action: PayloadAction<productDetails>) => {
@@ -27,7 +30,7 @@ const getCartItems = createSlice({
               : "";
           });
         } else {
-            (state.cartArr = [...state.cartArr, action.payload])
+          (state.cartArr = [...state.cartArr, action.payload])
         }
       }
     },
@@ -48,10 +51,21 @@ const getCartItems = createSlice({
           (items) => items.productId !== action.payload.productId
         )
       ];
+    },
+    addToWishList: (state, action: PayloadAction<productDetails>) => {
+       state.cartArr.forEach((check: productDetails) => {
+            check.productId === action.payload.productId
+              ? check.isSaved=true
+              : false;
+          });
+
+    },
+    deleteWishList: (state, action: PayloadAction<productDetails>) => {
+
     }
   }
 });
 
-export const { addToCartSlice, removeCartItem, decreaseCartItems } =
+export const { addToCartSlice, removeCartItem, decreaseCartItems, addToWishList } =
   getCartItems.actions;
 export default getCartItems.reducer;

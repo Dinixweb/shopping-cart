@@ -1,16 +1,38 @@
 import { MdAddShoppingCart } from 'react-icons/md'
+import { AiFillHeart } from 'react-icons/ai'
 import { cart, productDetails, productList, singleProduct } from '../../interfaces/cartItems'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { addToWishList } from '../../store/products/cartItems'
 import Image from 'next/image'
+import { useEffect,useState } from 'react'
 const SingleProduct = ({ product, addToCart }: singleProduct) => {
     const cartArr = useSelector((state: productList) => state.cartListArr)
+    const [isSaved, setIsSaved] = useState<boolean |false>(false)
+    const dispatch = useDispatch()
+
+    const [wishArr, setWishArr]= useState<number[]|[]>([])
+    const handleWishList = (productId: number) => {
+        const savedItem:productDetails = {
+            productId: productId,
+            isSaved: true
+        }
+        dispatch(addToWishList(savedItem))
+    }
+    console.log(product)
+
     return (
         <div className="main singleProduct">
           
                 <div className="card rounded-1 gap">
                 <div className="card-head">
+                    <div className='singleWishList d-flex end-0' onClick={() => handleWishList(product.productId)}>
+                        <span> 
+                            {product.isSaved? (<AiFillHeart size={30} color="red" />):( <AiFillHeart size={30} color="white" />)}  
+                        </span>
+                    </div>
                     <span>
-                         <Image src={product.image}  width={0} height={0} layout="responsive" className='image' alt="productImage" />
+                        <Image src={product.image} width={0} height={0} layout="responsive" className='image' alt="productImage" />
+                       
                    </span>
                 </div>
                 <div className="card-footer bg-white text-secondary">

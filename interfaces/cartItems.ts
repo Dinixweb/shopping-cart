@@ -3,17 +3,18 @@ import React from "react";
 
 
 export interface productDetails  {
-    image: string | any;
-    defaultQty: number;
+    image?: string | any;
+    defaultQty?: number;
     productId: number;
-    productName: string;
-    productQTY: number;
-    vendorNo: number;
-    salePrice: number;
-    discountPrice: number;
-    productCat: string;
-    orderTime: any;
-    shippingCost:number
+    productName?: string;
+    productQTY?: number;
+    vendorNo?: number;
+    salePrice?: number;
+    discountPrice?: number;
+    productCat?: string;
+    orderTime?: any;
+    shippingCost?: number;
+    isSaved?: boolean;
 }
 
 export type StaticImport = {
@@ -49,3 +50,4 @@ export type cartTotal = {
     itemQty?: number
     itemsPrice:number
 }
+
