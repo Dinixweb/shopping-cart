@@ -4,30 +4,34 @@ import { cart, productDetails, productList, singleProduct } from '../../interfac
 import { useSelector, useDispatch } from 'react-redux'
 import { addToWishList } from '../../store/products/cartItems'
 import Image from 'next/image'
-import { useEffect,useState } from 'react'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 const SingleProduct = ({ product, addToCart }: singleProduct) => {
     const cartArr = useSelector((state: productList) => state.cartListArr)
     const [isSaved, setIsSaved] = useState<boolean |false>(false)
     const dispatch = useDispatch()
-
     const [wishArr, setWishArr]= useState<number[]|[]>([])
-    const handleWishList = (productId: number) => {
+    const handleWishList = async(product:productDetails)=> {
         const savedItem:productDetails = {
-            productId: productId,
+            productId: product.productId,
             isSaved: true
         }
+
+        product.isSaved = true
+
+        await axios.put(`http://localhost:3500/products/${product.productId}`,  product).then((res)=>console.log(res.data)).catch((err)=>console.log(err))
+        
         dispatch(addToWishList(savedItem))
     }
-    console.log(product)
 
     return (
         <div className="main singleProduct">
           
                 <div className="card rounded-1 gap">
                 <div className="card-head">
-                    <div className='singleWishList d-flex end-0' onClick={() => handleWishList(product.productId)}>
+                    <div className='singleWishList d-flex end-0' onClick={() => handleWishList(product)}>
                         <span> 
-                            {product.isSaved? (<AiFillHeart size={30} color="red" />):( <AiFillHeart size={30} color="white" />)}  
+                            {product.isSaved? (<AiFillHeart size={30} color="red" />):(<AiFillHeart size={30} color="white" />) }
                         </span>
                     </div>
                     <span>
