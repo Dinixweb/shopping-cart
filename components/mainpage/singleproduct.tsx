@@ -10,17 +10,24 @@ const SingleProduct = ({ product, addToCart }: singleProduct) => {
     const cartArr = useSelector((state: productList) => state.cartListArr)
     const [isSaved, setIsSaved] = useState<boolean |false>(false)
     const dispatch = useDispatch()
-    const [wishArr, setWishArr]= useState<number[]|[]>([])
+    const [wishArr, setWishArr] = useState<number[] | []>([])
+    
+
     const handleWishList = async(product:productDetails)=> {
         const savedItem:productDetails = {
             productId: product.productId,
             isSaved: true
         }
 
-        product.isSaved = true
-
-        await axios.put(`http://localhost:3500/products/${product.productId}`,  product).then((res)=>console.log(res.data)).catch((err)=>console.log(err))
+        product.isSaved=true
+        const {data} = await axios.patch<productDetails>(`http://localhost:3500/products/${product.productId}`, {product}, {
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+            }
         
+        })
+        console.log(JSON.stringify(data))
         dispatch(addToWishList(savedItem))
     }
 
